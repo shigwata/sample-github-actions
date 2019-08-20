@@ -17,8 +17,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          printenv
-          echo ${GITHUB_REPOSITORY}
-          echo ${GITHUB_REF}
-          echo ${GITHUB_TOKEN}
           curl -H "Accept:application/vnd.github.antiope-preview+json" https://api.github.com/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_REF}/check-runs
